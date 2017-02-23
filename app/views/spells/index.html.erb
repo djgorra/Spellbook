@@ -1,0 +1,30 @@
+<div class="row fullWidth">
+  <% @spells.each do |spell| %>
+    <div class="callout columns small-10 medium-6 large-3">
+      <h5><%= spell.name %></h5>
+      <ul class="properties">
+        <li><strong>Range: </strong><%= spell.range %></li>
+        <li><strong>Components: </strong><%= spell.components %></li>
+        <% if spell.components %>
+          <li><strong>Components: </strong><%= spell.components %></li>
+        <% end %>
+        <li><strong>Ritual: </strong><%= spell.ritual %></li>
+        <li><strong>Duration: </strong><%= spell.duration %></li>
+        <li><strong>Concentration: </strong><%= spell.concentration %></li>
+        <li><strong>Casting Time: </strong><%= spell.casting_time %></li>
+        <li><strong>Level: </strong><%= spell.level %></li>
+        <li><strong>School: </strong><%= spell.school %></li>
+        <li><strong>Class: </strong><%= spell.char_class %></li>
+        <% if spell.archetype %>
+          <li><strong>Archetype: </strong><%= raw(spell.archetype) %></li>
+        <% end %>
+        <% if spell.patrons %>
+          <li><strong>Patrons: </strong><%= spell.patrons %></li>
+        <% end %>
+        <li><strong>Description: </strong><%= raw(spell.desc) %></li>
+        <% if spell.higher_level %>
+          <li><%= raw(spell.higher_level) %></li>
+        <% end %>
+    </div>
+  <% end %>
+</div>
